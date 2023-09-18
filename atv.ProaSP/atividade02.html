@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificando se planeta está no array</title>
+</head>
+<body>
+  <script>
+
+    /*Crie uma array de planetas que inclua "Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"  e,
+     em seguida, peça ao usuário para digitar o nome de um planeta. 
+     Verifique se o planeta que o usuário informou está na array e informe ao usuário.*/
+  
+const planetas = ["terra", "marte", "plutão", "vênus", "júpiter", "saturno"];
+
+const nomePlaneta = prompt("Digite o nome de um planeta:");
+
+const nomePlanetaMinusc = nomePlaneta.toLowerCase();
+
+if (planetas.includes(nomePlanetaMinusc)) {
+  alert(`Sim, "${nomePlaneta}" está na lista de planetas.`);
+} else {
+  alert(`Não, "${nomePlaneta}" não está na lista de planetas.`);
+  alert("Está é a lista de planetas no array:\n" + planetas.join(" - "));
+}
+
+  </script>
+</body>
+</html>

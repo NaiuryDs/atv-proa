@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Compras de Frutas</title>
+</head>
+<body>
+  <h1>Faltou dinheiro no mercado</h1>
+  <p>Clique no botão para remover as frutas da lista:</p>
+  <button onclick="removerFruta()">Remover Fruta</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    const frutas = ["maçã", "banana", "uva", "morango"];
+    const resultadoElement = document.getElementById("resultado");
+
+    function exibirListaDeFrutas() {
+      resultadoElement.textContent = "Lista de frutas: " + frutas.join(" - ");
+    }
+
+    function removerFruta() {
+      if (frutas.length > 0) {
+        const frutaRemover = prompt("Digite o nome de uma fruta para remover:");
+        const frutaRemoverMinusc = frutaRemover.toLowerCase(); // Converter para minúsculas
+
+        const index = frutas.indexOf(frutaRemoverMinusc);
+
+        if (index !== -1) {
+          frutas.splice(index, 1);
+          exibirListaDeFrutas();
+        } else {
+          alert("Fruta indisponível no nosso mercado");
+        }
+
+        if (frutas.length === 0) {
+          resultadoElement.textContent = "Lista de compras finalizada";
+        }
+      }
+    }
+
+    exibirListaDeFrutas();
+  </script>
+</body>
+</html>
